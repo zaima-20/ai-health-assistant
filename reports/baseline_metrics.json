@@ -1,0 +1,443 @@
+{
+  "model": "tfidf_logreg",
+  "best_params": {
+    "ngram_range": [
+      1,
+      1
+    ],
+    "C": 10.0,
+    "max_iter": 5000
+  },
+  "random_seed": 42,
+  "train_rows": 720,
+  "train_seconds": 0.203,
+  "grid_search": [
+    {
+      "ngram_range": [
+        1,
+        1
+      ],
+      "C": 0.1,
+      "val_accuracy": 0.8828,
+      "val_macro_f1": 0.8785,
+      "train_seconds": 0.058
+    },
+    {
+      "ngram_range": [
+        1,
+        1
+      ],
+      "C": 1.0,
+      "val_accuracy": 0.9297,
+      "val_macro_f1": 0.9309,
+      "train_seconds": 0.106
+    },
+    {
+      "ngram_range": [
+        1,
+        1
+      ],
+      "C": 10.0,
+      "val_accuracy": 0.9453,
+      "val_macro_f1": 0.948,
+      "train_seconds": 0.18
+    },
+    {
+      "ngram_range": [
+        1,
+        2
+      ],
+      "C": 0.1,
+      "val_accuracy": 0.8281,
+      "val_macro_f1": 0.8182,
+      "train_seconds": 0.158
+    },
+    {
+      "ngram_range": [
+        1,
+        2
+      ],
+      "C": 1.0,
+      "val_accuracy": 0.9375,
+      "val_macro_f1": 0.9397,
+      "train_seconds": 0.402
+    },
+    {
+      "ngram_range": [
+        1,
+        2
+      ],
+      "C": 10.0,
+      "val_accuracy": 0.9453,
+      "val_macro_f1": 0.9473,
+      "train_seconds": 0.868
+    }
+  ],
+  "validation": {
+    "accuracy": 0.9453,
+    "macro_f1": 0.948,
+    "n_samples": 128,
+    "per_class": {
+      "allergy": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 6
+      },
+      "arthritis": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 6
+      },
+      "bronchial asthma": {
+        "precision": 0.8333,
+        "recall": 0.8333,
+        "f1": 0.8333,
+        "support": 6
+      },
+      "cervical spondylosis": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 6
+      },
+      "chicken pox": {
+        "precision": 0.7143,
+        "recall": 0.8333,
+        "f1": 0.7692,
+        "support": 6
+      },
+      "common cold": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 6
+      },
+      "dengue": {
+        "precision": 1.0,
+        "recall": 0.8333,
+        "f1": 0.9091,
+        "support": 6
+      },
+      "diabetes": {
+        "precision": 0.7143,
+        "recall": 0.8333,
+        "f1": 0.7692,
+        "support": 6
+      },
+      "drug reaction": {
+        "precision": 0.8333,
+        "recall": 0.8333,
+        "f1": 0.8333,
+        "support": 6
+      },
+      "fungal infection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 6
+      },
+      "gastroesophageal reflux disease": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 6
+      },
+      "hypertension": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 6
+      },
+      "impetigo": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 6
+      },
+      "jaundice": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4
+      },
+      "malaria": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 6
+      },
+      "migraine": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 5
+      },
+      "peptic ulcer disease": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 5
+      },
+      "pneumonia": {
+        "precision": 0.8333,
+        "recall": 0.8333,
+        "f1": 0.8333,
+        "support": 6
+      },
+      "psoriasis": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 6
+      },
+      "typhoid": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 6
+      },
+      "urinary tract infection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 6
+      },
+      "varicose veins": {
+        "precision": 1.0,
+        "recall": 0.8333,
+        "f1": 0.9091,
+        "support": 6
+      }
+    },
+    "top_confusions": [
+      {
+        "true": "bronchial asthma",
+        "predicted": "pneumonia",
+        "count": 1
+      },
+      {
+        "true": "chicken pox",
+        "predicted": "diabetes",
+        "count": 1
+      },
+      {
+        "true": "dengue",
+        "predicted": "chicken pox",
+        "count": 1
+      },
+      {
+        "true": "diabetes",
+        "predicted": "drug reaction",
+        "count": 1
+      },
+      {
+        "true": "drug reaction",
+        "predicted": "diabetes",
+        "count": 1
+      },
+      {
+        "true": "pneumonia",
+        "predicted": "bronchial asthma",
+        "count": 1
+      },
+      {
+        "true": "varicose veins",
+        "predicted": "chicken pox",
+        "count": 1
+      }
+    ]
+  },
+  "test": {
+    "accuracy": 0.9387,
+    "macro_f1": 0.9392,
+    "n_samples": 212,
+    "per_class": {
+      "allergy": {
+        "precision": 0.9091,
+        "recall": 1.0,
+        "f1": 0.9524,
+        "support": 10
+      },
+      "arthritis": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "bronchial asthma": {
+        "precision": 0.8333,
+        "recall": 1.0,
+        "f1": 0.9091,
+        "support": 10
+      },
+      "cervical spondylosis": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "chicken pox": {
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.8889,
+        "support": 10
+      },
+      "common cold": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "dengue": {
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.8889,
+        "support": 10
+      },
+      "diabetes": {
+        "precision": 1.0,
+        "recall": 0.9,
+        "f1": 0.9474,
+        "support": 10
+      },
+      "drug reaction": {
+        "precision": 0.8889,
+        "recall": 1.0,
+        "f1": 0.9412,
+        "support": 8
+      },
+      "fungal infection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 9
+      },
+      "gastroesophageal reflux disease": {
+        "precision": 0.7273,
+        "recall": 0.8,
+        "f1": 0.7619,
+        "support": 10
+      },
+      "hypertension": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "impetigo": {
+        "precision": 0.9091,
+        "recall": 1.0,
+        "f1": 0.9524,
+        "support": 10
+      },
+      "jaundice": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 7
+      },
+      "malaria": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "migraine": {
+        "precision": 1.0,
+        "recall": 0.9,
+        "f1": 0.9474,
+        "support": 10
+      },
+      "peptic ulcer disease": {
+        "precision": 0.875,
+        "recall": 0.7,
+        "f1": 0.7778,
+        "support": 10
+      },
+      "pneumonia": {
+        "precision": 1.0,
+        "recall": 0.9,
+        "f1": 0.9474,
+        "support": 10
+      },
+      "psoriasis": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "typhoid": {
+        "precision": 0.7273,
+        "recall": 0.8889,
+        "f1": 0.8,
+        "support": 9
+      },
+      "urinary tract infection": {
+        "precision": 0.9,
+        "recall": 1.0,
+        "f1": 0.9474,
+        "support": 9
+      },
+      "varicose veins": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      }
+    },
+    "top_confusions": [
+      {
+        "true": "peptic ulcer disease",
+        "predicted": "gastroesophageal reflux disease",
+        "count": 3
+      },
+      {
+        "true": "dengue",
+        "predicted": "typhoid",
+        "count": 2
+      },
+      {
+        "true": "chicken pox",
+        "predicted": "bronchial asthma",
+        "count": 1
+      },
+      {
+        "true": "chicken pox",
+        "predicted": "impetigo",
+        "count": 1
+      },
+      {
+        "true": "diabetes",
+        "predicted": "urinary tract infection",
+        "count": 1
+      },
+      {
+        "true": "gastroesophageal reflux disease",
+        "predicted": "allergy",
+        "count": 1
+      },
+      {
+        "true": "gastroesophageal reflux disease",
+        "predicted": "typhoid",
+        "count": 1
+      },
+      {
+        "true": "migraine",
+        "predicted": "drug reaction",
+        "count": 1
+      },
+      {
+        "true": "pneumonia",
+        "predicted": "bronchial asthma",
+        "count": 1
+      },
+      {
+        "true": "typhoid",
+        "predicted": "peptic ulcer disease",
+        "count": 1
+      }
+    ]
+  }
+}

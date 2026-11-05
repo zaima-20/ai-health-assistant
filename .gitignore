@@ -1,0 +1,22 @@
+# Virtual environment
+venv/
+
+# Python bytecode and caches
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Saved models (too large for git), but keep the folder
+models/*
+!models/.gitkeep
+
+# Hugging Face cache (if pointed inside the project via HF_HOME)
+.cache/
+huggingface/
+hf_cache/
+
+# Secrets
+.env
+
+# Jupyter
+.ipynb_checkpoints/

@@ -1,0 +1,145 @@
+{
+  "train_cleaning": {
+    "rows_before": 853,
+    "removed_duplicates": 4,
+    "removed_test_overlap": 1,
+    "rows_after": 848
+  },
+  "rows": {
+    "train": 720,
+    "validation": 128,
+    "test": 212
+  },
+  "num_labels": 22,
+  "labels_only_in_test": [],
+  "rows_per_label": {
+    "train": {
+      "allergy": 34,
+      "arthritis": 34,
+      "bronchial asthma": 33,
+      "cervical spondylosis": 33,
+      "chicken pox": 34,
+      "common cold": 33,
+      "dengue": 34,
+      "diabetes": 34,
+      "drug reaction": 34,
+      "fungal infection": 33,
+      "gastroesophageal reflux disease": 33,
+      "hypertension": 34,
+      "impetigo": 34,
+      "jaundice": 26,
+      "malaria": 34,
+      "migraine": 27,
+      "peptic ulcer disease": 32,
+      "pneumonia": 31,
+      "psoriasis": 34,
+      "typhoid": 32,
+      "urinary tract infection": 33,
+      "varicose veins": 34
+    },
+    "validation": {
+      "allergy": 6,
+      "arthritis": 6,
+      "bronchial asthma": 6,
+      "cervical spondylosis": 6,
+      "chicken pox": 6,
+      "common cold": 6,
+      "dengue": 6,
+      "diabetes": 6,
+      "drug reaction": 6,
+      "fungal infection": 6,
+      "gastroesophageal reflux disease": 6,
+      "hypertension": 6,
+      "impetigo": 6,
+      "jaundice": 4,
+      "malaria": 6,
+      "migraine": 5,
+      "peptic ulcer disease": 5,
+      "pneumonia": 6,
+      "psoriasis": 6,
+      "typhoid": 6,
+      "urinary tract infection": 6,
+      "varicose veins": 6
+    },
+    "test": {
+      "allergy": 10,
+      "arthritis": 10,
+      "bronchial asthma": 10,
+      "cervical spondylosis": 10,
+      "chicken pox": 10,
+      "common cold": 10,
+      "dengue": 10,
+      "diabetes": 10,
+      "drug reaction": 8,
+      "fungal infection": 9,
+      "gastroesophageal reflux disease": 10,
+      "hypertension": 10,
+      "impetigo": 10,
+      "jaundice": 7,
+      "malaria": 10,
+      "migraine": 10,
+      "peptic ulcer disease": 10,
+      "pneumonia": 10,
+      "psoriasis": 10,
+      "typhoid": 9,
+      "urinary tract infection": 9,
+      "varicose veins": 10
+    }
+  },
+  "balance": {
+    "train": {
+      "min": 26,
+      "max": 34,
+      "max_to_min_ratio": 1.31
+    },
+    "validation": {
+      "min": 4,
+      "max": 6,
+      "max_to_min_ratio": 1.5
+    },
+    "test": {
+      "min": 7,
+      "max": 10,
+      "max_to_min_ratio": 1.43
+    }
+  },
+  "text_length_words": {
+    "train": {
+      "min": 8,
+      "mean": 29.0,
+      "max": 55
+    },
+    "validation": {
+      "min": 11,
+      "mean": 28.4,
+      "max": 47
+    },
+    "test": {
+      "min": 7,
+      "mean": 29.0,
+      "max": 59
+    }
+  },
+  "duplicates_in_official_train": {
+    "duplicated_texts": 0,
+    "rows_involved": 0,
+    "extra_rows": 0,
+    "conflicting_labels": 0
+  },
+  "duplicates_in_test": {
+    "duplicated_texts": 0,
+    "rows_involved": 0,
+    "extra_rows": 0,
+    "conflicting_labels": 0
+  },
+  "overlap_official_train_vs_test": {
+    "shared_texts": 0,
+    "rows_in_second": 0,
+    "rows_in_second_same_label": 0
+  },
+  "overlap_train_vs_validation": {
+    "shared_texts": 0,
+    "rows_in_second": 0,
+    "rows_in_second_same_label": 0
+  }
+}

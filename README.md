@@ -12,7 +12,17 @@ Describe your symptoms in plain English and get the three most likely conditions
   - **Urgent** (for example chest tightness, shortness of breath, feeling faint, confusion): an orange "see a doctor today, or sooner if it gets worse" banner, followed by the predictions.
   - If the model is not confident (top confidence below 0.5), the app says so and recommends a general physician.
 - **Top-3 predictions** with confidence bars, from one `predict()` interface that works with either model.
-- **Curated disease information with sources** for all 22 conditions: a short description, which doctor to see, a risk level with a reason, general self-care tips and urgent warning signs. Each entry was written only from its source page on the NHS, MedlinePlus or WHO site. A validator rejects medicine doses, digits and UK-only service names. Every entry has a `reviewed` flag, and the app shows "not yet reviewed" until the owner has checked it.
+- **Curated disease information with sources** for all 22 conditions: a short description, which doctor to see, a risk level with a reason, general self-care tips, and warning signs. Each entry was written only from its source page on the NHS, MedlinePlus or WHO site. A validator rejects medicine doses, digits and UK-only service names.
+  - **Warning signs have three levels.** Each sign keeps the level its source page gives it:
+
+    | Level | Heading in the app | Source page wording (examples) |
+    |---|---|---|
+    | Emergency | "Get emergency help now if" | "Call 999", "Call 999 or go to A&E", "Go to the emergency room"; WHO "seek care immediately" (dengue) |
+    | Urgent | "See a doctor urgently if" | "Urgent advice: Ask for an urgent GP appointment or get help from NHS 111", MedlinePlus "Contact your provider" |
+    | Routine | "See a doctor if" | "Non-urgent advice: See a GP" |
+
+    An entry can have signs at more than one level; for example, typhoid has three emergency signs and one urgent sign. The entry's `warning_level` is the most serious level that has any signs.
+  - **Review status.** Every entry has a `reviewed` flag, and the app shows "This information has not yet been reviewed" until the owner has checked it. `python -m src.disease_info` lists the entries still waiting for review.
 - **Word-level explanations.** The user's text is shown with words highlighted green (pushed towards the prediction) or red (pushed away).
 - **Two models**, selectable in the sidebar: TF-IDF + Logistic Regression ("Baseline (fast)") and fine-tuned DistilBERT.
 - **Privacy:** the symptom text is never saved, logged or cached. It exists only in the browser session.
@@ -105,7 +115,10 @@ On validation, every confused pair appeared only once for both models.
   - It can also misfire on wording such as "I can't breathe through my nose".
   - On the full dataset (1,065 rows), 17 rows trigger an emergency message and 184 an urgent one. These are mostly asthma, pneumonia and hypertension descriptions.
 - **Only 22 conditions.** Anything else is forced into one of them.
-- **Disease information is general.** It comes from public health websites, is not personal medical advice, and is waiting for owner review (`"reviewed": false`).
+- **Disease information is general.** It comes from public health websites and is not personal medical advice.
+  - **Review status:** 13 of the 22 entries have been reviewed by the owner.
+  - **Waiting for review:** 9 entries are marked `"reviewed": false` because their warning signs were regrouped into the emergency / urgent / routine levels. They are dengue, fungal infection, gastroesophageal reflux disease, hypertension, impetigo, psoriasis, typhoid, urinary tract infection and varicose veins.
+  - **Risk labels are general.** The risk level on each condition describes the condition in general, not the user's situation. When the user's text contains warning signs, the app says so above the condition cards.
 
 ## Screenshots
 

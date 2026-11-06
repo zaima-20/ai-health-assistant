@@ -41,6 +41,9 @@ EXAMPLES: dict[str, str] = {
                                  "taste in my mouth and I burp a lot, especially at night.",
 }
 RISK_COLOURS = {"low": "green", "moderate": "orange", "high": "red"}
+EMERGENCY_SIGNS_HEADING = "Get emergency help now if"
+URGENT_SIGNS_HEADING = "See a doctor urgently if"
+ROUTINE_SIGNS_HEADING = "See a doctor if"
 
 
 @dataclass(frozen=True)
@@ -130,8 +133,16 @@ def render_condition(rank: int, condition: Condition) -> None:
             st.markdown("**General self-care**")
             st.markdown("\n".join(f"- {tip}" for tip in info.self_care))
         with right:
-            st.markdown("**See a doctor urgently if**")
-            st.markdown("\n".join(f"- {sign}" for sign in info.warning_signs))
+            # Each sign sits under the level its source page gives it.
+            if info.emergency_signs:
+                st.markdown(f"**{EMERGENCY_SIGNS_HEADING}**")
+                st.markdown("\n".join(f"- {sign}" for sign in info.emergency_signs))
+            if info.urgent_signs:
+                st.markdown(f"**{URGENT_SIGNS_HEADING}**")
+                st.markdown("\n".join(f"- {sign}" for sign in info.urgent_signs))
+            if info.routine_signs:
+                st.markdown(f"**{ROUTINE_SIGNS_HEADING}**")
+                st.markdown("\n".join(f"- {sign}" for sign in info.routine_signs))
         st.markdown(f"Source: [{info.source}]({info.source})")
         if not info.reviewed:
             st.caption("ℹ️ This information has not yet been reviewed.")

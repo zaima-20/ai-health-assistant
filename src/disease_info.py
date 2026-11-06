@@ -23,8 +23,17 @@ RISK_LEVELS: tuple[str, ...] = ("low", "moderate", "high")
 ALLOWED_DOMAINS: tuple[str, ...] = ("medlineplus.gov", "nhs.uk", "who.int", "cdc.gov")
 TEXT_FIELDS: tuple[str, ...] = ("label", "description", "doctor_type", "risk_level",
                                 "risk_reason", "source")
-LIST_FIELDS: dict[str, tuple[int, int]] = {"self_care": (3, 4), "warning_signs": (2, 4)}
-REQUIRED_FIELDS: tuple[str, ...] = (*TEXT_FIELDS, *LIST_FIELDS, "reviewed")
+LIST_FIELDS: dict[str, tuple[int, int]] = {
+    "self_care": (3, 4),
+    "emergency_signs": (0, 4),  # source: ambulance / emergency department ("Call 999 ...")
+    "urgent_signs": (0, 4),     # source: urgent doctor visit ("Urgent advice: ... NHS 111")
+    "routine_signs": (0, 4),    # source: non-urgent doctor visit ("Non-urgent advice: See a GP")
+}
+SIGN_FIELDS: tuple[str, ...] = ("emergency_signs", "urgent_signs", "routine_signs")
+SIGNS_TOTAL: tuple[int, int] = (2, 4)  # all three sign lists together
+# Most serious first; warning_level is the most serious level that has any signs.
+WARNING_LEVELS: tuple[str, ...] = ("emergency", "urgent", "routine")
+REQUIRED_FIELDS: tuple[str, ...] = (*TEXT_FIELDS, *LIST_FIELDS, "warning_level", "reviewed")
 
 # Medicine-dose wording that must never appear in user-facing text.
 DOSAGE_PATTERN = re.compile(
@@ -54,7 +63,10 @@ class DiseaseInfo:
     risk_level: str
     risk_reason: str
     self_care: tuple[str, ...]
-    warning_signs: tuple[str, ...]
+    warning_level: str
+    emergency_signs: tuple[str, ...]
+    urgent_signs: tuple[str, ...]
+    routine_signs: tuple[str, ...]
     source: str
     reviewed: bool
 
@@ -84,6 +96,32 @@ def find_forbidden_text(text: str) -> list[str]:
     return problems
 
 
+def _validate_warning_level(entry: dict[str, Any], name: str) -> list[str]:
+    """Check warning_level and that it agrees with the three sign lists.
+
+    warning_level must be the most serious level whose list is not empty
+    (emergency > urgent > routine), and the lists must hold 2 to 4 signs together.
+    """
+    errors: list[str] = []
+    level = entry.get("warning_level")
+    if "warning_level" in entry and level not in WARNING_LEVELS:
+        errors.append(f"{name}: warning_level must be one of {', '.join(WARNING_LEVELS)}")
+    lists = [entry.get(f) for f in SIGN_FIELDS]
+    if not all(isinstance(lst, list) for lst in lists):
+        return errors
+    total = sum(len(lst) for lst in lists)
+    lo, hi = SIGNS_TOTAL
+    if not lo <= total <= hi:
+        errors.append(f"{name}: emergency_signs + urgent_signs + routine_signs must have "
+                      f"{lo} to {hi} items together, has {total}")
+    if level in WARNING_LEVELS and total:
+        expected = next(lvl for lvl, lst in zip(WARNING_LEVELS, lists) if lst)
+        if level != expected:
+            errors.append(f"{name}: warning_level is '{level}' but should be '{expected}' "
+                          "(the most serious level that has signs)")
+    return errors
+
+
 def validate_entry(entry: Any) -> list[str]:
     """Return every problem found in one entry (empty list if it is valid)."""
     if not isinstance(entry, dict):
@@ -110,6 +148,7 @@ def validate_entry(entry: Any) -> list[str]:
             errors.append(f"{name}: '{f}' must have {lo} to {hi} items, has {len(items)}")
     if "reviewed" in entry and not isinstance(entry["reviewed"], bool):
         errors.append(f"{name}: 'reviewed' must be true or false")
+    errors += _validate_warning_level(entry, name)
 
     if entry.get("risk_level") not in RISK_LEVELS and "risk_level" in entry:
         errors.append(f"{name}: risk_level must be one of {', '.join(RISK_LEVELS)}")
@@ -168,7 +207,10 @@ def load_disease_info(path: Path = DISEASE_INFO_PATH,
         e["label"]: DiseaseInfo(
             label=e["label"], description=e["description"], doctor_type=e["doctor_type"],
             risk_level=e["risk_level"], risk_reason=e["risk_reason"],
-            self_care=tuple(e["self_care"]), warning_signs=tuple(e["warning_signs"]),
+            self_care=tuple(e["self_care"]), warning_level=e["warning_level"],
+            emergency_signs=tuple(e["emergency_signs"]),
+            urgent_signs=tuple(e["urgent_signs"]),
+            routine_signs=tuple(e["routine_signs"]),
             source=e["source"], reviewed=e["reviewed"],
         )
         for e in entries

@@ -23,7 +23,10 @@ def _entry(label: str, **changes: Any) -> dict[str, Any]:
         "risk_level": "low",
         "risk_reason": "Usually mild.",
         "self_care": ["Rest.", "Drink plenty of fluids.", "See a doctor if it gets worse."],
-        "warning_signs": ["Trouble breathing", "Fever that lasts longer than four days"],
+        "warning_level": "urgent",
+        "emergency_signs": [],
+        "urgent_signs": ["Trouble breathing", "Fever that lasts longer than four days"],
+        "routine_signs": [],
         "source": "https://www.nhs.uk/conditions/example/",
         "reviewed": False,
     }
@@ -136,12 +139,129 @@ def test_empty_text_field(field: str, value: Any) -> None:
 @pytest.mark.parametrize("field, items", [
     ("self_care", ["Rest.", "Fluids."]),                 # too few
     ("self_care", ["a.", "b.", "c.", "d.", "e."]),       # too many
-    ("warning_signs", ["Only one"]),                     # too few
-    ("warning_signs", ["a", "b", "c", "d", "e"]),        # too many
+    ("urgent_signs", ["a", "b", "c", "d", "e"]),         # too many
 ])
 def test_list_length(field: str, items: list[str]) -> None:
     errors = validate([_entry("cold", **{field: items}), _entry("flu")], LABELS)
     assert any(f"'{field}' must have" in e for e in errors)
+
+
+# --------------------------------------------------------------------------- #
+# Validation: warning_level and the two sign lists
+# --------------------------------------------------------------------------- #
+def test_warning_level_is_required() -> None:
+    entry = _entry("cold")
+    del entry["warning_level"]
+    errors = validate([entry, _entry("flu")], LABELS)
+    assert any("missing field 'warning_level'" in e for e in errors)
+
+
+@pytest.mark.parametrize("level", ["", "Emergency", "high", "non-urgent", None])
+def test_bad_warning_level(level: Any) -> None:
+    errors = validate([_entry("cold", warning_level=level), _entry("flu")], LABELS)
+    assert any("warning_level must be one of" in e for e in errors)
+
+
+def test_emergency_entry_is_valid() -> None:
+    entry = _entry("cold", warning_level="emergency",
+                   emergency_signs=["Struggling to breathe"], urgent_signs=["Fever"])
+    assert validate([entry, _entry("flu")], LABELS) == []
+
+
+def test_level_must_be_emergency_when_emergency_signs_exist() -> None:
+    entry = _entry("cold", warning_level="urgent",
+                   emergency_signs=["Struggling to breathe"], urgent_signs=["Fever"])
+    errors = validate([entry, _entry("flu")], LABELS)
+    assert any("should be 'emergency'" in e for e in errors)
+
+
+def test_level_must_be_urgent_without_emergency_signs() -> None:
+    errors = validate([_entry("cold", warning_level="emergency"), _entry("flu")], LABELS)
+    assert any("should be 'urgent'" in e for e in errors)
+
+
+def test_routine_entry_is_valid() -> None:
+    entry = _entry("cold", warning_level="routine", urgent_signs=[],
+                   routine_signs=["A rash that does not improve", "Symptoms that come back"])
+    assert validate([entry, _entry("flu")], LABELS) == []
+
+
+@pytest.mark.parametrize("em, ur, ro, expected", [
+    ([], [], ["a", "b"], "routine"),
+    ([], ["a"], ["b"], "urgent"),
+    (["a"], [], ["b"], "emergency"),
+    (["a"], ["b"], ["c"], "emergency"),
+])
+def test_level_is_most_serious_non_empty_list(em: list[str], ur: list[str], ro: list[str],
+                                              expected: str) -> None:
+    good = _entry("cold", warning_level=expected, emergency_signs=em, urgent_signs=ur,
+                  routine_signs=ro)
+    assert validate([good, _entry("flu")], LABELS) == []
+    for wrong in set(di.WARNING_LEVELS) - {expected}:
+        bad = dict(good, warning_level=wrong)
+        errors = validate([bad, _entry("flu")], LABELS)
+        assert any(f"should be '{expected}'" in e for e in errors)
+
+
+@pytest.mark.parametrize("em, ur, ro", [
+    ([], ["Only one"], []),                        # too few in total
+    (["a", "b"], ["c", "d"], ["e"]),               # too many in total
+    ([], [], []),                                   # none at all
+])
+def test_signs_total(em: list[str], ur: list[str], ro: list[str]) -> None:
+    level = "emergency" if em else "urgent" if ur else "routine"
+    entry = _entry("cold", warning_level=level, emergency_signs=em, urgent_signs=ur,
+                   routine_signs=ro)
+    errors = validate([entry, _entry("flu")], LABELS)
+    assert any("items together" in e for e in errors)
+
+
+@pytest.mark.parametrize("field", ["emergency_signs", "urgent_signs", "routine_signs"])
+def test_sign_lists_must_hold_strings(field: str) -> None:
+    errors = validate([_entry("cold", **{field: "Rash"}), _entry("flu")], LABELS)
+    assert any(f"'{field}' must be a list" in e for e in errors)
+
+
+def test_old_warning_signs_field_is_rejected() -> None:
+    errors = validate([_entry("cold", warning_signs=["Rash", "Fever"]), _entry("flu")],
+                      LABELS)
+    assert any("unknown field 'warning_signs'" in e for e in errors)
+
+
+def test_loaded_entry_has_both_lists(good_files: tuple[Path, Path]) -> None:
+    info = di.load_disease_info(*good_files)["cold"]
+    assert info.warning_level == "urgent"
+    assert info.emergency_signs == ()
+    assert info.urgent_signs == ("Trouble breathing", "Fever that lasts longer than four days")
+    assert info.routine_signs == ()
+
+
+# Decided from each source page's own headings:
+# "Call 999 / go to A&E / emergency room" -> emergency, "Urgent advice" -> urgent,
+# "Non-urgent advice: See a GP" -> routine. Dengue: WHO "seek care immediately" -> emergency.
+# Values: (warning_level, #emergency, #urgent, #routine)
+REAL_LEVELS = {
+    "allergy": ("emergency", 4, 0, 0), "bronchial asthma": ("emergency", 3, 0, 0),
+    "drug reaction": ("emergency", 4, 0, 0), "migraine": ("emergency", 4, 0, 0),
+    "peptic ulcer disease": ("emergency", 4, 0, 0), "pneumonia": ("emergency", 4, 0, 0),
+    "psoriasis": ("emergency", 3, 0, 0), "hypertension": ("emergency", 3, 1, 0),
+    "typhoid": ("emergency", 3, 1, 0), "urinary tract infection": ("emergency", 1, 3, 0),
+    "dengue": ("emergency", 4, 0, 0), "malaria": ("urgent", 0, 4, 0),
+    "jaundice": ("urgent", 0, 3, 0), "gastroesophageal reflux disease": ("urgent", 0, 1, 3),
+    "varicose veins": ("urgent", 0, 1, 2), "fungal infection": ("routine", 0, 0, 3),
+    "impetigo": ("routine", 0, 0, 4),
+}
+
+
+@pytest.mark.parametrize("label, expected", REAL_LEVELS.items())
+def test_real_file_warning_levels(label: str, expected: tuple[str, int, int, int]) -> None:
+    info = di.load_disease_info()[label]
+    assert (info.warning_level, len(info.emergency_signs), len(info.urgent_signs),
+            len(info.routine_signs)) == expected
+
+
+def test_real_file_reviewed_values_are_booleans() -> None:
+    assert all(isinstance(i.reviewed, bool) for i in di.load_disease_info().values())
 
 
 @pytest.mark.parametrize("value", [[], "Rest.", ["Rest.", "", "Sleep."], None])
@@ -248,7 +368,9 @@ def test_source_url_on_nhs_is_still_allowed() -> None:
     ("description", "Treat with 500mg daily."),
     ("risk_reason", "Has a cure."),
     ("self_care", ["Rest.", "Take tablets.", "Fluids."]),
-    ("warning_signs", ["Fever for 3 days", "Rash"]),
+    ("urgent_signs", ["Fever for 3 days", "Rash"]),
+    ("emergency_signs", ["Call A&E now", "Rash"]),
+    ("routine_signs", ["See your GP", "Rash"]),
 ])
 def test_forbidden_text_in_any_field(field: str, value: Any) -> None:
     assert validate([_entry("cold", **{field: value}), _entry("flu")], LABELS)

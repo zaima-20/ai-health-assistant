@@ -158,7 +158,55 @@ def test_condition_card_shows_disease_info() -> None:
     text = "\n".join(markdown_values(at))
     assert "Who to see:" in text
     assert "https://www.nhs.uk/conditions/malaria/" in text
-    assert any("not yet been reviewed" in c.value for c in at.caption)
+
+
+@pytest.mark.parametrize("reviewed, note_shown", [(False, True), (True, False)])
+def test_unreviewed_note_follows_reviewed_flag(monkeypatch: pytest.MonkeyPatch,
+                                               reviewed: bool, note_shown: bool) -> None:
+    import dataclasses
+
+    from src import disease_info
+
+    real = disease_info.get_disease_info
+    monkeypatch.setattr(disease_info, "get_disease_info",
+                        lambda label: dataclasses.replace(real(label), reviewed=reviewed))
+    at = analyse(ORDINARY)
+    assert any("not yet been reviewed" in c.value for c in at.caption) is note_shown
+
+
+def test_warning_sign_headings_follow_source_levels() -> None:
+    # Top 3 here: malaria (urgent only), dengue (emergency only), typhoid (emergency + urgent).
+    at = analyse(ORDINARY)
+    values = markdown_values(at)
+    assert values.count("**Get emergency help now if**") == 2   # dengue, typhoid
+    assert values.count("**See a doctor urgently if**") == 2    # malaria, typhoid
+    assert "**See a doctor if**" not in values
+    joined = "\n".join(values)
+    assert "- Vomiting blood, or vomit that looks like ground coffee" in joined  # typhoid
+    emergency_blocks = [values[i + 1] for i, v in enumerate(values)
+                        if v == "**Get emergency help now if**"]
+    typhoid_block = next(b for b in emergency_blocks if "Black or dark red stool" in b)
+    assert "Feeling unwell after traveling" not in typhoid_block
+
+
+def test_routine_signs_heading(monkeypatch: pytest.MonkeyPatch) -> None:
+    import dataclasses
+
+    from src import disease_info
+
+    real = disease_info.get_disease_info
+
+    def with_routine(label: str):  # noqa: ANN202
+        info = real(label)
+        if label != "malaria":
+            return info
+        return dataclasses.replace(info, warning_level="routine", emergency_signs=(),
+                                   urgent_signs=(), routine_signs=("Sign A", "Sign B"))
+
+    monkeypatch.setattr(disease_info, "get_disease_info", with_routine)
+    values = markdown_values(analyse(ORDINARY))
+    i = values.index("**See a doctor if**")
+    assert values[i + 1] == "- Sign A\n- Sign B"
 
 
 def test_low_confidence_shows_info(monkeypatch: pytest.MonkeyPatch) -> None:

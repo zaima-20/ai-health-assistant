@@ -10,14 +10,17 @@
       "If a specialist gives you an allergy management plan, follow it.",
       "See a doctor if you think you or your child may have an allergy."
     ],
-    "warning_signs": [
+    "warning_level": "emergency",
+    "emergency_signs": [
       "Lips, mouth, throat or tongue suddenly swell",
       "Breathing becomes very fast or difficult, or the throat feels tight",
       "Skin, tongue or lips turn blue, gray or pale",
       "Sudden confusion, drowsiness or dizziness, or fainting"
     ],
+    "urgent_signs": [],
+    "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/allergies/",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "arthritis",
@@ -31,14 +34,17 @@
       "Do not smoke and avoid drinking too much alcohol.",
       "See a doctor if joint pain, swelling or stiffness does not go away in a few days."
     ],
-    "warning_signs": [
+    "warning_level": "urgent",
+    "emergency_signs": [],
+    "urgent_signs": [
       "Severe pain and swelling in just one joint that started suddenly",
       "The skin around a joint is red or hot",
       "Sore joints with a high or low temperature",
       "Sore joints with sore eyes or problems with your vision"
     ],
+    "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/arthritis/",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "bronchial asthma",
@@ -52,13 +58,16 @@
       "Exercise regularly and keep to a healthy weight; ask your doctor or nurse for advice if exercise triggers your symptoms.",
       "During an attack, sit up straight and try to stay calm."
     ],
-    "warning_signs": [
+    "warning_level": "emergency",
+    "emergency_signs": [
       "Symptoms start to feel worse at any time during an attack",
       "You do not feel better after using your reliever inhaler",
       "You are having an asthma attack and do not have your inhaler"
     ],
+    "urgent_signs": [],
+    "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/asthma/",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "cervical spondylosis",
@@ -72,13 +81,16 @@
       "Talking therapy (cognitive behavioral therapy) may help if the pain is having a serious impact on your life.",
       "Contact a doctor if the condition becomes worse."
     ],
-    "warning_signs": [
+    "warning_level": "urgent",
+    "emergency_signs": [],
+    "urgent_signs": [
       "You lose control of your bladder or bowels (get help right away)",
       "You develop loss of movement or feeling in an area of the body",
       "The condition becomes worse"
     ],
+    "routine_signs": [],
     "source": "https://medlineplus.gov/ency/article/000436.htm",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "chicken pox",
@@ -92,14 +104,17 @@
       "Bathe in cool water, pat the skin dry and wear loose clothes.",
       "Stay off school, nursery or work until all the spots have formed a scab."
     ],
-    "warning_signs": [
+    "warning_level": "urgent",
+    "emergency_signs": [],
+    "urgent_signs": [
       "The skin around the blisters becomes red, hot or painful",
       "You are more short of breath than usual",
       "A child shows signs of dehydration, such as fewer wet diapers",
       "You are pregnant or have a weakened immune system, or a newborn baby may have chickenpox"
     ],
+    "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/chickenpox/",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "common cold",
@@ -113,14 +128,17 @@
       "Gargle with warm salt water and use a clean humidifier or cool mist vaporizer.",
       "Wash your hands often with soap and water, and stay home when sick."
     ],
-    "warning_signs": [
+    "warning_level": "urgent",
+    "emergency_signs": [],
+    "urgent_signs": [
       "Trouble breathing or fast breathing",
       "Fever that lasts longer than four days",
       "Symptoms that last more than ten days without improvement",
       "Fever or cough that improves but then returns or gets worse"
     ],
+    "routine_signs": [],
     "source": "https://medlineplus.gov/commoncold.html",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "dengue",
@@ -134,12 +152,15 @@
       "Avoid mosquito bites, especially during the day.",
       "Cover, empty and clean water storage containers every week."
     ],
-    "warning_signs": [
+    "warning_level": "emergency",
+    "emergency_signs": [
       "Severe abdominal pain",
       "Persistent vomiting",
       "Rapid breathing",
       "Bleeding gums or nose, or blood in vomit or stool"
     ],
+    "urgent_signs": [],
+    "routine_signs": [],
     "source": "https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue",
     "reviewed": false
   },
@@ -155,14 +176,17 @@
       "Keep to a healthy weight.",
       "Keep your blood glucose within the target level agreed with your care team."
     ],
-    "warning_signs": [
+    "warning_level": "urgent",
+    "emergency_signs": [],
+    "urgent_signs": [
       "Feeling thirsty all the time",
       "Urinating more than usual",
       "Feeling very tired",
       "Losing weight without trying"
     ],
+    "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/diabetes/",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "drug reaction",
@@ -175,14 +199,17 @@
       "Make sure all your health care providers, including dentists and hospital staff, know about your drug allergies.",
       "Contact your doctor if you are taking a medicine and seem to be having a reaction to it."
     ],
-    "warning_signs": [
+    "warning_level": "emergency",
+    "emergency_signs": [
       "Difficulty breathing, wheezing or a hoarse voice",
       "Fainting, lightheadedness, dizziness or confusion",
       "Hives over different parts of the body",
       "Rapid pulse or palpitations"
     ],
+    "urgent_signs": [],
+    "routine_signs": [],
     "source": "https://medlineplus.gov/ency/article/000819.htm",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "fungal infection",
@@ -196,7 +223,10 @@
       "Keep your skin clean, and wash your hands after touching animals or soil.",
       "Do not scratch the rash, as this could spread it to other parts of the body."
     ],
-    "warning_signs": [
+    "warning_level": "routine",
+    "emergency_signs": [],
+    "urgent_signs": [],
+    "routine_signs": [
       "The rash has not improved after treatment",
       "The infection is on the scalp",
       "You have a weakened immune system, for example from chemotherapy or diabetes"
@@ -216,11 +246,15 @@
       "Lose weight if you are overweight, and avoid clothing that is tight around your waist.",
       "Stop smoking and avoid drinking too much alcohol."
     ],
-    "warning_signs": [
+    "warning_level": "urgent",
+    "emergency_signs": [],
+    "urgent_signs": [
+      "Symptoms getting worse at any time"
+    ],
+    "routine_signs": [
       "Food getting stuck in your throat",
       "Being sick frequently",
-      "Unexplained weight loss",
-      "Symptoms getting worse at any time"
+      "Unexplained weight loss"
     ],
     "source": "https://www.nhs.uk/conditions/heartburn-and-acid-reflux/",
     "reviewed": false
@@ -237,12 +271,16 @@
       "Limit alcohol and caffeine.",
       "Do not smoke."
     ],
-    "warning_signs": [
+    "warning_level": "emergency",
+    "emergency_signs": [
       "Sudden pain or discomfort in your chest that does not go away",
       "Pain that spreads to your arm, neck, jaw, stomach or back",
-      "Chest pain while feeling sweaty, sick, light-headed or short of breath",
+      "Chest pain while feeling sweaty, sick, light-headed or short of breath"
+    ],
+    "urgent_signs": [
       "Frequent headaches or blurred vision"
     ],
+    "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/high-blood-pressure/",
     "reviewed": false
   },
@@ -258,7 +296,10 @@
       "Do not share washcloths, towels, sheets or pillowcases, and wash them at a high temperature.",
       "Stay away from work, school or nursery until you are no longer contagious."
     ],
-    "warning_signs": [
+    "warning_level": "routine",
+    "emergency_signs": [],
+    "urgent_signs": [],
+    "routine_signs": [
       "Symptoms in a baby under a year old",
       "Symptoms have changed or become worse after treatment",
       "You have a weakened immune system",
@@ -278,13 +319,16 @@
       "Tell the doctor about other changes you notice, such as itchy skin, darker urine or paler stool.",
       "Follow the treatment for the cause, because treatment depends on what is causing the jaundice."
     ],
-    "warning_signs": [
+    "warning_level": "urgent",
+    "emergency_signs": [],
+    "urgent_signs": [
       "Your skin or the whites of your eyes look yellow",
       "Itchy skin together with yellowing",
       "Darker urine or paler stool than usual"
     ],
+    "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/jaundice/",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "malaria",
@@ -298,14 +342,17 @@
       "Wear long sleeves and trousers in the evening, when mosquitoes are most active.",
       "If you get symptoms while traveling, get medical advice straight away instead of waiting until you get home."
     ],
-    "warning_signs": [
+    "warning_level": "urgent",
+    "emergency_signs": [],
+    "urgent_signs": [
       "A high temperature, sweating, or feeling hot, cold or shivery after visiting a malaria area in the past year",
       "Headaches and confusion",
       "Extreme tiredness or sleepiness",
       "Difficulty breathing"
     ],
+    "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/malaria/",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "migraine",
@@ -319,14 +366,17 @@
       "Keep up your fluid intake and limit caffeine and alcohol.",
       "Eat meals at regular times, exercise regularly, sleep well and manage stress."
     ],
-    "warning_signs": [
+    "warning_level": "emergency",
+    "emergency_signs": [
       "A sudden, extremely painful headache",
       "Problems speaking or remembering things, or feeling drowsy or confused",
       "Loss of vision, or blurred or double vision",
       "Weakness in the arm or leg on one side of the body, or on one side of the face"
     ],
+    "urgent_signs": [],
+    "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/migraine/",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "peptic ulcer disease",
@@ -340,14 +390,17 @@
       "Do not smoke, and do not drink too much alcohol.",
       "Try to manage stress and keep to a healthy weight."
     ],
-    "warning_signs": [
+    "warning_level": "emergency",
+    "emergency_signs": [
       "Vomiting blood, or vomit that looks like ground coffee",
       "Black, sticky, very smelly stool, or blood in your stool",
       "Severe stomach pain, or stomach pain when touched",
       "Sudden chest pain"
     ],
+    "urgent_signs": [],
+    "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/stomach-ulcer/",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "pneumonia",
@@ -361,14 +414,17 @@
       "Cover your mouth and nose with a tissue when you cough or sneeze, and wash your hands regularly.",
       "Do not smoke."
     ],
-    "warning_signs": [
+    "warning_level": "emergency",
+    "emergency_signs": [
       "Struggling to breathe: choking, gasping and unable to speak",
       "Pale, blue or blotchy skin, lips or tongue",
       "Coughing up blood",
       "Suddenly feeling confused, for example not knowing where you are"
     ],
+    "urgent_signs": [],
+    "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/pneumonia/",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "psoriasis",
@@ -382,12 +438,14 @@
       "Try to reduce stress if you can.",
       "Try not to drink too much alcohol, and stop smoking if you smoke."
     ],
-    "warning_signs": [
+    "warning_level": "emergency",
+    "emergency_signs": [
       "Skin quickly turns red and develops white, pus-filled bumps that join together",
       "Patches on the feet turn yellow-brown and fill with pus",
-      "Red, scaly, pus-filled bumps on the tips of the fingers and toes",
-      "Skin changes together with a fast heartbeat, a high temperature, or feeling hot, cold or shivery"
+      "Red, scaly, pus-filled bumps on the tips of the fingers and toes"
     ],
+    "urgent_signs": [],
+    "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/psoriasis/",
     "reviewed": false
   },
@@ -403,12 +461,16 @@
       "Do not eat raw or lightly cooked meat or seafood, or food that has been left uncovered.",
       "Do not prepare or serve food for other people if you have or think you may have typhoid fever."
     ],
-    "warning_signs": [
+    "warning_level": "emergency",
+    "emergency_signs": [
       "A sudden stomach pain that keeps getting worse",
       "Black or dark red stool",
-      "Vomiting blood, or vomit that looks like ground coffee",
+      "Vomiting blood, or vomit that looks like ground coffee"
+    ],
+    "urgent_signs": [
       "Feeling unwell after traveling to an area with typhoid fever"
     ],
+    "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/typhoid-fever/",
     "reviewed": false
   },
@@ -424,12 +486,16 @@
       "Wipe from front to back after using the toilet, and do not hold in your urine.",
       "Wear cotton underwear and avoid tight underwear."
     ],
-    "warning_signs": [
-      "Confusion, drowsiness or difficulty speaking",
+    "warning_level": "emergency",
+    "emergency_signs": [
+      "Confusion, drowsiness or difficulty speaking"
+    ],
+    "urgent_signs": [
       "A very high or low temperature, or feeling hot, cold or shivery",
       "Pain in the lower stomach or in the back just under the ribs",
       "Blood in your urine"
     ],
+    "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/urinary-tract-infections-utis/",
     "reviewed": false
   },
@@ -445,8 +511,12 @@
       "Moisturize dry, flaky or itchy skin, and try not to injure your legs.",
       "Do not smoke."
     ],
-    "warning_signs": [
-      "Varicose veins that are bleeding",
+    "warning_level": "urgent",
+    "emergency_signs": [],
+    "urgent_signs": [
+      "Varicose veins that are bleeding"
+    ],
+    "routine_signs": [
       "A leg sore that has not healed after two weeks",
       "Veins that are getting worse, or painful, itchy or swollen legs"
     ],

@@ -20,7 +20,14 @@ from src.disease_info import DiseaseInfo, get_disease_info
 from src.display import highlight_html, load_test_scores, scores_table_markdown
 from src.explain import explain
 from src.predict import Condition, PredictionResult, Predictor
-from src.safety import DISCLAIMER, EMERGENCY, URGENT, SafetyReport, assess
+from src.safety import (
+    DISCLAIMER,
+    EMERGENCY,
+    URGENT,
+    WARNING_CONTEXT_NOTE,
+    SafetyReport,
+    assess,
+)
 
 MAX_CHARS = 1000
 RESULT_KEY = "last_result"
@@ -136,6 +143,8 @@ def render_predictions(result: AnalysisResult, text: str) -> None:
     if result.report.confidence_message:
         st.info(result.report.confidence_message)
     st.subheader("Possible conditions")
+    if result.report.level in (EMERGENCY, URGENT):
+        st.info(WARNING_CONTEXT_NOTE, icon="⚠️")
     for rank, condition in enumerate(result.prediction.conditions, start=1):
         render_condition(rank, condition)
 

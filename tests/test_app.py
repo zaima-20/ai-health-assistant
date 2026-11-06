@@ -13,7 +13,7 @@ from streamlit.testing.v1 import AppTest
 from src import predict
 from src.config import CRISIS_HELPLINE_TEXT
 from src.explain import normalize_word
-from src.safety import DISCLAIMER
+from src.safety import DISCLAIMER, WARNING_CONTEXT_NOTE
 
 APP = str(Path(__file__).resolve().parent.parent / "app.py")
 LABELS = ["common cold", "dengue", "malaria", "typhoid"]
@@ -218,6 +218,41 @@ def test_urgent_shows_warning_and_predictions() -> None:
     assert any("See a doctor today" in w.value for w in at.warning)
     assert expander(at, "Show possible conditions anyway") is None
     assert has_conditions(at)
+
+
+# --------------------------------------------------------------------------- #
+# Note that risk labels are general when warning signs are present
+# --------------------------------------------------------------------------- #
+def _note_infos(block) -> list:  # noqa: ANN001
+    return [i for i in block.info if i.value == WARNING_CONTEXT_NOTE]
+
+
+def test_urgent_shows_risk_label_note_above_cards() -> None:
+    at = analyse("I feel short of breath with a fever and chills")
+    assert len(_note_infos(at)) == 1
+    def walk(node):  # noqa: ANN001, ANN202 - every element in on-screen order
+        children = getattr(node, "children", None)
+        if children is None:
+            yield node
+        else:
+            for child in children.values():
+                yield from walk(child)
+
+    values = [str(getattr(n, "value", "")) for n in walk(at.main)]
+    note_pos = values.index(WARNING_CONTEXT_NOTE)
+    card_pos = next(i for i, v in enumerate(values) if v.startswith("#### 1."))
+    assert note_pos < card_pos
+
+
+def test_emergency_shows_risk_label_note_inside_expander() -> None:
+    at = analyse("I have crushing chest pain and chills and sweating")
+    hidden = expander(at, "Show possible conditions anyway")
+    assert len(_note_infos(hidden)) == 1
+
+
+def test_no_risk_label_note_without_warning_signs() -> None:
+    at = analyse(ORDINARY)
+    assert _note_infos(at) == []
 
 
 # --------------------------------------------------------------------------- #

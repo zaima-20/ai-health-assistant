@@ -353,6 +353,31 @@ def test_no_message_contains_digits_except_helpline() -> None:
     assert not re.search(r"\d", _without_helpline(safety.CRISIS_MESSAGE))
 
 
+def _all_safety_messages() -> list[str]:
+    """Every user-facing text in src.safety: module-level strings and category messages."""
+    texts = [v for k, v in vars(safety).items() if k.isupper() and isinstance(v, str)]
+    return texts + [cat.message for cat in safety.RED_FLAG_CATEGORIES]
+
+
+def test_no_safety_message_contains_gp() -> None:
+    messages = _all_safety_messages()
+    assert safety.LOW_CONFIDENCE_MESSAGE in messages
+    assert safety.WARNING_CONTEXT_NOTE in messages
+    for msg in messages:
+        assert not re.search(r"\bGP\b", msg), msg
+
+
+def test_low_confidence_message_says_general_physician() -> None:
+    assert "general physician for a proper assessment" in safety.LOW_CONFIDENCE_MESSAGE
+
+
+def test_warning_context_note_text_and_no_digits() -> None:
+    assert safety.WARNING_CONTEXT_NOTE == (
+        "Your description includes warning signs. The risk labels below describe each "
+        "condition in general, not your situation. Follow the warning above.")
+    assert not re.search(r"\d", safety.WARNING_CONTEXT_NOTE)
+
+
 def test_digit_check_would_catch_a_number_outside_the_helpline() -> None:
     bad = safety.EMERGENCY_MESSAGE + " Call 999."
     assert re.search(r"\d", _without_helpline(bad))

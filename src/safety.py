@@ -36,7 +36,13 @@ URGENT_MESSAGE = ("Your description mentions a warning sign. See a doctor today,
                   "or sooner if it gets worse. If it becomes severe, seek emergency care.")
 
 LOW_CONFIDENCE_MESSAGE = ("The model is not confident about this prediction. "
-                          "Please see a general physician (GP) for a proper assessment.")
+                          "Please see a general physician for a proper assessment.")
+
+# Shown above the condition cards when the text has emergency or urgent signs, so a
+# "low risk" label on a condition is not read as "your situation is low risk".
+WARNING_CONTEXT_NOTE = ("Your description includes warning signs. The risk labels below "
+                        "describe each condition in general, not your situation. "
+                        "Follow the warning above.")
 
 CRISIS_MESSAGE = ("If you are thinking about suicide or harming yourself, please contact "
                   "your local emergency services or a crisis helpline right away. "

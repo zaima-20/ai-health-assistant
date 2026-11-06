@@ -13,7 +13,7 @@
     "warning_signs": [
       "Lips, mouth, throat or tongue suddenly swell",
       "Breathing becomes very fast or difficult, or the throat feels tight",
-      "Skin, tongue or lips turn blue, grey or pale",
+      "Skin, tongue or lips turn blue, gray or pale",
       "Sudden confusion, drowsiness or dizziness, or fainting"
     ],
     "source": "https://www.nhs.uk/conditions/allergies/",
@@ -206,7 +206,7 @@
   },
   {
     "label": "gastroesophageal reflux disease",
-    "description": "Heartburn is a burning feeling in the chest caused by stomach acid travelling up towards the throat (acid reflux). If it keeps happening, it may be called gastro-oesophageal reflux disease (GORD).",
+    "description": "Heartburn is a burning feeling in the chest caused by stomach acid traveling up towards the throat (acid reflux). If it keeps happening, it may be called gastroesophageal reflux disease (GERD).",
     "doctor_type": "General physician, who may refer you to a specialist",
     "risk_level": "low",
     "risk_reason": "Often helped by lifestyle changes; a doctor can help rule out more serious causes.",
@@ -296,7 +296,7 @@
       "Get travel health advice from a doctor, nurse, pharmacist or travel clinic before visiting a country where malaria is found.",
       "Use insect repellent and sleep under mosquito nets treated with insecticide.",
       "Wear long sleeves and trousers in the evening, when mosquitoes are most active.",
-      "If you get symptoms while travelling, get medical advice straight away instead of waiting until you get home."
+      "If you get symptoms while traveling, get medical advice straight away instead of waiting until you get home."
     ],
     "warning_signs": [
       "A high temperature, sweating, or feeling hot, cold or shivery after visiting a malaria area in the past year",
@@ -407,7 +407,7 @@
       "A sudden stomach pain that keeps getting worse",
       "Black or dark red stool",
       "Vomiting blood, or vomit that looks like ground coffee",
-      "Feeling unwell after travelling to an area with typhoid fever"
+      "Feeling unwell after traveling to an area with typhoid fever"
     ],
     "source": "https://www.nhs.uk/conditions/typhoid-fever/",
     "reviewed": false
@@ -442,7 +442,7 @@
     "self_care": [
       "Try to keep to a healthy weight and exercise regularly, such as walking.",
       "Put your legs up when you can, and avoid standing for long periods.",
-      "Moisturise dry, flaky or itchy skin, and try not to injure your legs.",
+      "Moisturize dry, flaky or itchy skin, and try not to injure your legs.",
       "Do not smoke."
     ],
     "warning_signs": [

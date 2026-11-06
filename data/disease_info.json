@@ -95,7 +95,7 @@
     "warning_signs": [
       "The skin around the blisters becomes red, hot or painful",
       "You are more short of breath than usual",
-      "A child shows signs of dehydration, such as fewer wet nappies",
+      "A child shows signs of dehydration, such as fewer wet diapers",
       "You are pregnant or have a weakened immune system, or a newborn baby may have chickenpox"
     ],
     "source": "https://www.nhs.uk/conditions/chickenpox/",
@@ -157,7 +157,7 @@
     ],
     "warning_signs": [
       "Feeling thirsty all the time",
-      "Peeing more than usual",
+      "Urinating more than usual",
       "Feeling very tired",
       "Losing weight without trying"
     ],
@@ -255,7 +255,7 @@
     "self_care": [
       "Wash affected areas with soap and water and dry them thoroughly.",
       "Do not touch or scratch sores, blisters or crusty patches.",
-      "Do not share flannels, towels, sheets or pillowcases, and wash them at a high temperature.",
+      "Do not share washcloths, towels, sheets or pillowcases, and wash them at a high temperature.",
       "Stay away from work, school or nursery until you are no longer contagious."
     ],
     "warning_signs": [
@@ -275,13 +275,13 @@
     "risk_reason": "There are many possible causes and some are serious, so it needs urgent medical help.",
     "self_care": [
       "Do not wait for it to go away: get an urgent appointment with a doctor.",
-      "Tell the doctor about other changes you notice, such as itchy skin, darker pee or paler poo.",
+      "Tell the doctor about other changes you notice, such as itchy skin, darker urine or paler stool.",
       "Follow the treatment for the cause, because treatment depends on what is causing the jaundice."
     ],
     "warning_signs": [
       "Your skin or the whites of your eyes look yellow",
       "Itchy skin together with yellowing",
-      "Darker pee or paler poo than usual"
+      "Darker urine or paler stool than usual"
     ],
     "source": "https://www.nhs.uk/conditions/jaundice/",
     "reviewed": false
@@ -342,8 +342,8 @@
     ],
     "warning_signs": [
       "Vomiting blood, or vomit that looks like ground coffee",
-      "Black, sticky, very smelly poo, or blood in your poo",
-      "Severe tummy pain, or tummy pain when touched",
+      "Black, sticky, very smelly stool, or blood in your stool",
+      "Severe stomach pain, or stomach pain when touched",
       "Sudden chest pain"
     ],
     "source": "https://www.nhs.uk/conditions/stomach-ulcer/",
@@ -405,7 +405,7 @@
     ],
     "warning_signs": [
       "A sudden stomach pain that keeps getting worse",
-      "Black or dark red poo",
+      "Black or dark red stool",
       "Vomiting blood, or vomit that looks like ground coffee",
       "Feeling unwell after travelling to an area with typhoid fever"
     ],
@@ -419,16 +419,16 @@
     "risk_level": "low",
     "risk_reason": "Can usually be treated by a doctor, but a kidney infection can be serious and could cause sepsis if it is not treated.",
     "self_care": [
-      "Rest, and drink enough fluids so that you pass pale pee during the day.",
+      "Rest, and drink enough fluids so that you pass pale urine during the day.",
       "Avoid drinks that may irritate your bladder, such as fruit juice, coffee and alcohol.",
-      "Wipe from front to back after using the toilet, and do not hold your pee in.",
+      "Wipe from front to back after using the toilet, and do not hold in your urine.",
       "Wear cotton underwear and avoid tight underwear."
     ],
     "warning_signs": [
       "Confusion, drowsiness or difficulty speaking",
       "A very high or low temperature, or feeling hot, cold or shivery",
-      "Pain in the lower tummy or in the back just under the ribs",
-      "Blood in your pee"
+      "Pain in the lower stomach or in the back just under the ribs",
+      "Blood in your urine"
     ],
     "source": "https://www.nhs.uk/conditions/urinary-tract-infections-utis/",
     "reviewed": false
@@ -447,7 +447,7 @@
     ],
     "warning_signs": [
       "Varicose veins that are bleeding",
-      "A leg sore that has not healed after a fortnight",
+      "A leg sore that has not healed after two weeks",
       "Veins that are getting worse, or painful, itchy or swollen legs"
     ],
     "source": "https://www.nhs.uk/conditions/varicose-veins/",

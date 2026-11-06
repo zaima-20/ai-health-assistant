@@ -1,0 +1,456 @@
+[
+  {
+    "label": "allergy",
+    "description": "An allergy is where your body reacts to something that's normally harmless, such as pollen, certain foods or insect bites. Symptoms can be mild, but for some people they can be very serious.",
+    "doctor_type": "General physician, who may refer you to a specialist allergy clinic",
+    "risk_level": "moderate",
+    "risk_reason": "Usually mild, but a serious allergic reaction (anaphylaxis) needs immediate treatment in hospital.",
+    "self_care": [
+      "Try to avoid the thing you're allergic to whenever possible.",
+      "If a specialist gives you an allergy management plan, follow it.",
+      "See a doctor if you think you or your child may have an allergy."
+    ],
+    "warning_signs": [
+      "Lips, mouth, throat or tongue suddenly swell",
+      "Breathing becomes very fast or difficult, or the throat feels tight",
+      "Skin, tongue or lips turn blue, grey or pale",
+      "Sudden confusion, drowsiness or dizziness, or fainting"
+    ],
+    "source": "https://www.nhs.uk/conditions/allergies/",
+    "reviewed": false
+  },
+  {
+    "label": "arthritis",
+    "description": "Arthritis is a condition that causes pain, swelling and stiffness in one or more joints. Treatments and lifestyle changes can help manage the symptoms.",
+    "doctor_type": "General physician; sometimes a rheumatologist",
+    "risk_level": "low",
+    "risk_reason": "A long-term condition; treatments can help manage the symptoms.",
+    "self_care": [
+      "Exercise regularly with low-impact activities such as swimming, walking, pilates or yoga.",
+      "Eat a healthy, balanced diet and keep to a healthy weight to reduce strain on your joints.",
+      "Do not smoke and avoid drinking too much alcohol.",
+      "See a doctor if joint pain, swelling or stiffness does not go away in a few days."
+    ],
+    "warning_signs": [
+      "Severe pain and swelling in just one joint that started suddenly",
+      "The skin around a joint is red or hot",
+      "Sore joints with a high or low temperature",
+      "Sore joints with sore eyes or problems with your vision"
+    ],
+    "source": "https://www.nhs.uk/conditions/arthritis/",
+    "reviewed": false
+  },
+  {
+    "label": "bronchial asthma",
+    "description": "Asthma is a common long-term condition that affects your breathing. It can usually be well treated, but an asthma attack, when symptoms are severe and it's difficult to breathe, can be life-threatening.",
+    "doctor_type": "General physician or asthma nurse; sometimes a specialist hospital doctor",
+    "risk_level": "moderate",
+    "risk_reason": "Usually well controlled with treatment, but a severe asthma attack can be life-threatening.",
+    "self_care": [
+      "Try to avoid things that trigger your symptoms, such as air pollution, smoke, pollen or animals.",
+      "Do not smoke, and get help to quit if you need it.",
+      "Exercise regularly and keep to a healthy weight; ask your doctor or nurse for advice if exercise triggers your symptoms.",
+      "During an attack, sit up straight and try to stay calm."
+    ],
+    "warning_signs": [
+      "Symptoms start to feel worse at any time during an attack",
+      "You do not feel better after using your reliever inhaler",
+      "You are having an asthma attack and do not have your inhaler"
+    ],
+    "source": "https://www.nhs.uk/conditions/asthma/",
+    "reviewed": false
+  },
+  {
+    "label": "cervical spondylosis",
+    "description": "Cervical spondylosis is a disorder in which there is wear on the cartilage (disks), bones and joints of the neck. Most people with it have some long-term symptoms.",
+    "doctor_type": "General physician; a physical therapist can help with exercises",
+    "risk_level": "low",
+    "risk_reason": "Often causes long-term neck symptoms; occasionally, pressure on the spinal cord leads to more serious problems.",
+    "self_care": [
+      "Ask a physical therapist to teach you exercises that make your neck muscles stronger.",
+      "Cold packs and heat therapy may help your pain during flare-ups.",
+      "Talking therapy (cognitive behavioral therapy) may help if the pain is having a serious impact on your life.",
+      "Contact a doctor if the condition becomes worse."
+    ],
+    "warning_signs": [
+      "You lose control of your bladder or bowels (get help right away)",
+      "You develop loss of movement or feeling in an area of the body",
+      "The condition becomes worse"
+    ],
+    "source": "https://medlineplus.gov/ency/article/000436.htm",
+    "reviewed": false
+  },
+  {
+    "label": "chicken pox",
+    "description": "Chickenpox is a common infection that spreads easily and mostly affects children. It usually gets better on its own within a week or two.",
+    "doctor_type": "Usually looked after at home; general physician if needed",
+    "risk_level": "low",
+    "risk_reason": "Usually not serious, but it can be dangerous for newborn babies, pregnant people and people with a weakened immune system.",
+    "self_care": [
+      "Drink plenty of fluids.",
+      "Try not to scratch the spots, as this can cause scarring; keep fingernails short.",
+      "Bathe in cool water, pat the skin dry and wear loose clothes.",
+      "Stay off school, nursery or work until all the spots have formed a scab."
+    ],
+    "warning_signs": [
+      "The skin around the blisters becomes red, hot or painful",
+      "You are more short of breath than usual",
+      "A child shows signs of dehydration, such as fewer wet nappies",
+      "You are pregnant or have a weakened immune system, or a newborn baby may have chickenpox"
+    ],
+    "source": "https://www.nhs.uk/conditions/chickenpox/",
+    "reviewed": false
+  },
+  {
+    "label": "common cold",
+    "description": "The common cold is a mild infection of your upper respiratory tract, which includes your nose and throat.",
+    "doctor_type": "General physician",
+    "risk_level": "low",
+    "risk_reason": "Usually mild, though some people, especially those with a weakened immune system or asthma, may develop bronchitis or pneumonia.",
+    "self_care": [
+      "Get lots of rest.",
+      "Drink plenty of fluids.",
+      "Gargle with warm salt water and use a clean humidifier or cool mist vaporizer.",
+      "Wash your hands often with soap and water, and stay home when sick."
+    ],
+    "warning_signs": [
+      "Trouble breathing or fast breathing",
+      "Fever that lasts longer than four days",
+      "Symptoms that last more than ten days without improvement",
+      "Fever or cough that improves but then returns or gets worse"
+    ],
+    "source": "https://medlineplus.gov/commoncold.html",
+    "reviewed": false
+  },
+  {
+    "label": "dengue",
+    "description": "Dengue is a viral infection that is spread from mosquitoes to people. Some people develop severe dengue and need care in a hospital.",
+    "doctor_type": "General physician (doctor); severe dengue needs hospital care",
+    "risk_level": "high",
+    "risk_reason": "Severe dengue can be fatal, so people with severe symptoms should seek care immediately.",
+    "self_care": [
+      "Rest.",
+      "Drink plenty of liquids.",
+      "Avoid mosquito bites, especially during the day.",
+      "Cover, empty and clean water storage containers every week."
+    ],
+    "warning_signs": [
+      "Severe abdominal pain",
+      "Persistent vomiting",
+      "Rapid breathing",
+      "Bleeding gums or nose, or blood in vomit or stool"
+    ],
+    "source": "https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue",
+    "reviewed": false
+  },
+  {
+    "label": "diabetes",
+    "description": "Diabetes is a condition that causes your blood glucose (sugar) level to become too high. Over time, high blood glucose can lead to other health problems.",
+    "doctor_type": "General physician and a specialist diabetes team",
+    "risk_level": "moderate",
+    "risk_reason": "It increases the chance of heart attack, stroke, and kidney, nerve, foot and sight problems.",
+    "self_care": [
+      "Eat a healthy, balanced diet.",
+      "Exercise regularly.",
+      "Keep to a healthy weight.",
+      "Keep your blood glucose within the target level agreed with your care team."
+    ],
+    "warning_signs": [
+      "Feeling thirsty all the time",
+      "Peeing more than usual",
+      "Feeling very tired",
+      "Losing weight without trying"
+    ],
+    "source": "https://www.nhs.uk/conditions/diabetes/",
+    "reviewed": false
+  },
+  {
+    "label": "drug reaction",
+    "description": "A drug allergy is a group of symptoms caused by an allergic reaction to a medicine. Sometimes it can lead to severe asthma or a life-threatening allergic reaction (anaphylaxis).",
+    "doctor_type": "General physician; sometimes an allergist",
+    "risk_level": "moderate",
+    "risk_reason": "Sometimes a reaction leads to severe asthma, anaphylaxis or death.",
+    "self_care": [
+      "If you know you have a drug allergy, avoiding that medicine is the best way to prevent a reaction.",
+      "Make sure all your health care providers, including dentists and hospital staff, know about your drug allergies.",
+      "Contact your doctor if you are taking a medicine and seem to be having a reaction to it."
+    ],
+    "warning_signs": [
+      "Difficulty breathing, wheezing or a hoarse voice",
+      "Fainting, lightheadedness, dizziness or confusion",
+      "Hives over different parts of the body",
+      "Rapid pulse or palpitations"
+    ],
+    "source": "https://medlineplus.gov/ency/article/000819.htm",
+    "reviewed": false
+  },
+  {
+    "label": "fungal infection",
+    "description": "Fungal skin infections such as ringworm are common and cause a rash. Despite its name, ringworm is a fungal infection and is not caused by worms.",
+    "doctor_type": "General physician; a pharmacist can also give advice",
+    "risk_level": "low",
+    "risk_reason": "A common skin infection; the rash can grow or spread, and on the scalp it may cause patchy hair loss.",
+    "self_care": [
+      "Start treatment as soon as possible; ask a doctor or pharmacist for advice.",
+      "Wash towels and bedsheets regularly, and do not share towels, combs or bedsheets.",
+      "Keep your skin clean, and wash your hands after touching animals or soil.",
+      "Do not scratch the rash, as this could spread it to other parts of the body."
+    ],
+    "warning_signs": [
+      "The rash has not improved after treatment",
+      "The infection is on the scalp",
+      "You have a weakened immune system, for example from chemotherapy or diabetes"
+    ],
+    "source": "https://www.nhs.uk/conditions/ringworm/",
+    "reviewed": false
+  },
+  {
+    "label": "gastroesophageal reflux disease",
+    "description": "Heartburn is a burning feeling in the chest caused by stomach acid travelling up towards the throat (acid reflux). If it keeps happening, it may be called gastro-oesophageal reflux disease (GORD).",
+    "doctor_type": "General physician, who may refer you to a specialist",
+    "risk_level": "low",
+    "risk_reason": "Often helped by lifestyle changes; a doctor can help rule out more serious causes.",
+    "self_care": [
+      "Eat smaller, more frequent meals, and avoid eating within a few hours of bedtime.",
+      "Avoid foods and drinks that trigger your symptoms.",
+      "Lose weight if you are overweight, and avoid clothing that is tight around your waist.",
+      "Stop smoking and avoid drinking too much alcohol."
+    ],
+    "warning_signs": [
+      "Food getting stuck in your throat",
+      "Being sick frequently",
+      "Unexplained weight loss",
+      "Symptoms getting worse at any time"
+    ],
+    "source": "https://www.nhs.uk/conditions/heartburn-and-acid-reflux/",
+    "reviewed": false
+  },
+  {
+    "label": "hypertension",
+    "description": "High blood pressure (hypertension) puts extra strain on your blood vessels, heart and other organs. If it's not treated, it can lead to serious problems like heart attacks or strokes.",
+    "doctor_type": "General physician; blood pressure can also be checked at many pharmacies",
+    "risk_level": "moderate",
+    "risk_reason": "If not treated, it increases the risk of heart disease, heart attacks, strokes, kidney disease and vascular dementia.",
+    "self_care": [
+      "Have a healthy, balanced diet and avoid too much salt.",
+      "Exercise regularly, and lose weight if you are overweight.",
+      "Limit alcohol and caffeine.",
+      "Do not smoke."
+    ],
+    "warning_signs": [
+      "Sudden pain or discomfort in your chest that does not go away",
+      "Pain that spreads to your arm, neck, jaw, stomach or back",
+      "Chest pain while feeling sweaty, sick, light-headed or short of breath",
+      "Frequent headaches or blurred vision"
+    ],
+    "source": "https://www.nhs.uk/conditions/high-blood-pressure/",
+    "reviewed": false
+  },
+  {
+    "label": "impetigo",
+    "description": "Impetigo is a skin infection that's very contagious but not usually serious.",
+    "doctor_type": "General physician",
+    "risk_level": "low",
+    "risk_reason": "Not usually serious, but babies and people with a weakened immune system may need extra treatment to stop more serious problems.",
+    "self_care": [
+      "Wash affected areas with soap and water and dry them thoroughly.",
+      "Do not touch or scratch sores, blisters or crusty patches.",
+      "Do not share flannels, towels, sheets or pillowcases, and wash them at a high temperature.",
+      "Stay away from work, school or nursery until you are no longer contagious."
+    ],
+    "warning_signs": [
+      "Symptoms in a baby under a year old",
+      "Symptoms have changed or become worse after treatment",
+      "You have a weakened immune system",
+      "Impetigo has come back within a year"
+    ],
+    "source": "https://www.nhs.uk/conditions/impetigo/",
+    "reviewed": false
+  },
+  {
+    "label": "jaundice",
+    "description": "Jaundice is when your skin or the whites of your eyes turn yellow. It can be a sign of something serious, such as liver disease.",
+    "doctor_type": "General physician, as an urgent appointment",
+    "risk_level": "high",
+    "risk_reason": "There are many possible causes and some are serious, so it needs urgent medical help.",
+    "self_care": [
+      "Do not wait for it to go away: get an urgent appointment with a doctor.",
+      "Tell the doctor about other changes you notice, such as itchy skin, darker pee or paler poo.",
+      "Follow the treatment for the cause, because treatment depends on what is causing the jaundice."
+    ],
+    "warning_signs": [
+      "Your skin or the whites of your eyes look yellow",
+      "Itchy skin together with yellowing",
+      "Darker pee or paler poo than usual"
+    ],
+    "source": "https://www.nhs.uk/conditions/jaundice/",
+    "reviewed": false
+  },
+  {
+    "label": "malaria",
+    "description": "Malaria is a serious infection spread by mosquitoes found in some parts of the world. It is an emergency and needs to be diagnosed and treated quickly.",
+    "doctor_type": "General physician urgently; some people need specialist care in hospital",
+    "risk_level": "high",
+    "risk_reason": "You can die from malaria if it's not diagnosed and treated quickly.",
+    "self_care": [
+      "Get travel health advice from a doctor, nurse, pharmacist or travel clinic before visiting a country where malaria is found.",
+      "Use insect repellent and sleep under mosquito nets treated with insecticide.",
+      "Wear long sleeves and trousers in the evening, when mosquitoes are most active.",
+      "If you get symptoms while travelling, get medical advice straight away instead of waiting until you get home."
+    ],
+    "warning_signs": [
+      "A high temperature, sweating, or feeling hot, cold or shivery after visiting a malaria area in the past year",
+      "Headaches and confusion",
+      "Extreme tiredness or sleepiness",
+      "Difficulty breathing"
+    ],
+    "source": "https://www.nhs.uk/conditions/malaria/",
+    "reviewed": false
+  },
+  {
+    "label": "migraine",
+    "description": "Migraine is a condition that causes symptoms such as a severe headache, feeling sick and sensitivity to light. Treatment can help manage symptoms and prevent attacks.",
+    "doctor_type": "General physician; sometimes a specialist",
+    "risk_level": "low",
+    "risk_reason": "Attacks can be very painful, but treatment and lifestyle changes can help manage them.",
+    "self_care": [
+      "During an attack, try sleeping or lying down in a darkened room.",
+      "Avoid your known triggers; keeping a migraine diary can help you find them.",
+      "Keep up your fluid intake and limit caffeine and alcohol.",
+      "Eat meals at regular times, exercise regularly, sleep well and manage stress."
+    ],
+    "warning_signs": [
+      "A sudden, extremely painful headache",
+      "Problems speaking or remembering things, or feeling drowsy or confused",
+      "Loss of vision, or blurred or double vision",
+      "Weakness in the arm or leg on one side of the body, or on one side of the face"
+    ],
+    "source": "https://www.nhs.uk/conditions/migraine/",
+    "reviewed": false
+  },
+  {
+    "label": "peptic ulcer disease",
+    "description": "Peptic ulcers (also called stomach or gastric ulcers) are sores in the stomach or the intestine. They can be serious, but most people recover with treatment.",
+    "doctor_type": "General physician, who may arrange tests such as a gastroscopy",
+    "risk_level": "moderate",
+    "risk_reason": "Most people recover with treatment, but an untreated ulcer can lead to serious problems that may be life-threatening.",
+    "self_care": [
+      "Eat smaller meals, and have your evening meal a few hours before bed.",
+      "Avoid foods or drinks that trigger your symptoms, such as fatty or spicy foods, coffee and chocolate.",
+      "Do not smoke, and do not drink too much alcohol.",
+      "Try to manage stress and keep to a healthy weight."
+    ],
+    "warning_signs": [
+      "Vomiting blood, or vomit that looks like ground coffee",
+      "Black, sticky, very smelly poo, or blood in your poo",
+      "Severe tummy pain, or tummy pain when touched",
+      "Sudden chest pain"
+    ],
+    "source": "https://www.nhs.uk/conditions/stomach-ulcer/",
+    "reviewed": false
+  },
+  {
+    "label": "pneumonia",
+    "description": "Pneumonia is inflammation of the lungs, usually caused by an infection. Babies, older people and people with heart or lung conditions are more at risk of becoming seriously ill.",
+    "doctor_type": "General physician; some people need hospital treatment",
+    "risk_level": "moderate",
+    "risk_reason": "Some people, such as babies, older people and those with heart or lung conditions, are at risk of becoming seriously ill.",
+    "self_care": [
+      "Rest until you feel better.",
+      "Drink plenty of fluids.",
+      "Cover your mouth and nose with a tissue when you cough or sneeze, and wash your hands regularly.",
+      "Do not smoke."
+    ],
+    "warning_signs": [
+      "Struggling to breathe: choking, gasping and unable to speak",
+      "Pale, blue or blotchy skin, lips or tongue",
+      "Coughing up blood",
+      "Suddenly feeling confused, for example not knowing where you are"
+    ],
+    "source": "https://www.nhs.uk/conditions/pneumonia/",
+    "reviewed": false
+  },
+  {
+    "label": "psoriasis",
+    "description": "Psoriasis is a common skin condition that causes itchy and painful patches of dry, flaky skin.",
+    "doctor_type": "General physician; you may be referred to a dermatologist",
+    "risk_level": "low",
+    "risk_reason": "A long-term skin condition; some people go on to develop other problems such as psoriatic arthritis.",
+    "self_care": [
+      "Try to avoid the things that make your symptoms worse (triggers).",
+      "Have a healthy, balanced diet and get regular exercise.",
+      "Try to reduce stress if you can.",
+      "Try not to drink too much alcohol, and stop smoking if you smoke."
+    ],
+    "warning_signs": [
+      "Skin quickly turns red and develops white, pus-filled bumps that join together",
+      "Patches on the feet turn yellow-brown and fill with pus",
+      "Red, scaly, pus-filled bumps on the tips of the fingers and toes",
+      "Skin changes together with a fast heartbeat, a high temperature, or feeling hot, cold or shivery"
+    ],
+    "source": "https://www.nhs.uk/conditions/psoriasis/",
+    "reviewed": false
+  },
+  {
+    "label": "typhoid",
+    "description": "Typhoid fever is an infection spread through unclean food or water. Most people who are treated make a full recovery, but it can cause serious problems if not treated.",
+    "doctor_type": "General physician or urgent care; tests may need to be done in hospital",
+    "risk_level": "moderate",
+    "risk_reason": "If not treated, it can cause serious problems such as internal bleeding.",
+    "self_care": [
+      "Wash your hands regularly with soap and warm water, especially after using the toilet.",
+      "In areas with typhoid fever, use bottled or cooled boiled water, even to brush your teeth.",
+      "Do not eat raw or lightly cooked meat or seafood, or food that has been left uncovered.",
+      "Do not prepare or serve food for other people if you have or think you may have typhoid fever."
+    ],
+    "warning_signs": [
+      "A sudden stomach pain that keeps getting worse",
+      "Black or dark red poo",
+      "Vomiting blood, or vomit that looks like ground coffee",
+      "Feeling unwell after travelling to an area with typhoid fever"
+    ],
+    "source": "https://www.nhs.uk/conditions/typhoid-fever/",
+    "reviewed": false
+  },
+  {
+    "label": "urinary tract infection",
+    "description": "Urinary tract infections (UTIs) affect parts of the urinary tract, such as the bladder (cystitis), the urethra or the kidneys. A kidney infection can be serious if it is not treated.",
+    "doctor_type": "General physician; sometimes a specialist for repeated infections",
+    "risk_level": "low",
+    "risk_reason": "Can usually be treated by a doctor, but a kidney infection can be serious and could cause sepsis if it is not treated.",
+    "self_care": [
+      "Rest, and drink enough fluids so that you pass pale pee during the day.",
+      "Avoid drinks that may irritate your bladder, such as fruit juice, coffee and alcohol.",
+      "Wipe from front to back after using the toilet, and do not hold your pee in.",
+      "Wear cotton underwear and avoid tight underwear."
+    ],
+    "warning_signs": [
+      "Confusion, drowsiness or difficulty speaking",
+      "A very high or low temperature, or feeling hot, cold or shivery",
+      "Pain in the lower tummy or in the back just under the ribs",
+      "Blood in your pee"
+    ],
+    "source": "https://www.nhs.uk/conditions/urinary-tract-infections-utis/",
+    "reviewed": false
+  },
+  {
+    "label": "varicose veins",
+    "description": "Varicose veins are swollen, twisted veins under the skin, usually on the legs. They are common and not usually serious.",
+    "doctor_type": "General physician, who may refer you to a specialist",
+    "risk_level": "low",
+    "risk_reason": "Not usually serious, but they can sometimes cause complications such as bleeding, leg ulcers or blood clots.",
+    "self_care": [
+      "Try to keep to a healthy weight and exercise regularly, such as walking.",
+      "Put your legs up when you can, and avoid standing for long periods.",
+      "Moisturise dry, flaky or itchy skin, and try not to injure your legs.",
+      "Do not smoke."
+    ],
+    "warning_signs": [
+      "Varicose veins that are bleeding",
+      "A leg sore that has not healed after a fortnight",
+      "Veins that are getting worse, or painful, itchy or swollen legs"
+    ],
+    "source": "https://www.nhs.uk/conditions/varicose-veins/",
+    "reviewed": false
+  }
+]

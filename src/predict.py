@@ -193,8 +193,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     # Safety first: the red-flag check runs before (and independently of) the model.
-    for flag in check_red_flags(args.text):
-        print(f"!!! URGENT ({flag.name}): {flag.message}")
+    for flag in check_red_flags(args.text):  # emergency flags come first
+        prefix = "!!! EMERGENCY" if flag.level == "emergency" else "! URGENT"
+        print(f"{prefix} ({flag.name}): {flag.message}")
     print(DISCLAIMER)
 
     try:

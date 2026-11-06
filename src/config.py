@@ -21,7 +21,7 @@ TOP_K: Final[int] = 3
 
 # Shown with the suicidal-thoughts / self-harm red flag.
 # TODO(owner): replace the placeholder with a verified helpline for your audience.
-CRISIS_HELPLINE_TEXT: Final[str] = "Crisis helpline: [verify helpline]"
+CRISIS_HELPLINE_TEXT: Final[str] = "Umang Pakistan, free 24/7 mental health helpline: 0311-7786264"
 
 # Dataset and model names
 DATASET_NAME: Final[str] = "gretelai/symptom_to_diagnosis"

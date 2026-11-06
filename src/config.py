@@ -19,6 +19,10 @@ VALIDATION_SIZE: Final[float] = 0.15
 CONFIDENCE_THRESHOLD: Final[float] = 0.5
 TOP_K: Final[int] = 3
 
+# Shown with the suicidal-thoughts / self-harm red flag.
+# TODO(owner): replace the placeholder with a verified helpline for your audience.
+CRISIS_HELPLINE_TEXT: Final[str] = "Crisis helpline: [verify helpline]"
+
 # Dataset and model names
 DATASET_NAME: Final[str] = "gretelai/symptom_to_diagnosis"
 BASE_MODEL_NAME: Final[str] = "distilbert-base-uncased"

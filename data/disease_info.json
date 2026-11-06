@@ -162,7 +162,7 @@
     "urgent_signs": [],
     "routine_signs": [],
     "source": "https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "diabetes",
@@ -232,7 +232,7 @@
       "You have a weakened immune system, for example from chemotherapy or diabetes"
     ],
     "source": "https://www.nhs.uk/conditions/ringworm/",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "gastroesophageal reflux disease",
@@ -257,7 +257,7 @@
       "Unexplained weight loss"
     ],
     "source": "https://www.nhs.uk/conditions/heartburn-and-acid-reflux/",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "hypertension",
@@ -282,7 +282,7 @@
     ],
     "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/high-blood-pressure/",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "impetigo",
@@ -306,7 +306,7 @@
       "Impetigo has come back within a year"
     ],
     "source": "https://www.nhs.uk/conditions/impetigo/",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "jaundice",
@@ -447,7 +447,7 @@
     "urgent_signs": [],
     "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/psoriasis/",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "typhoid",
@@ -472,7 +472,7 @@
     ],
     "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/typhoid-fever/",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "urinary tract infection",
@@ -497,7 +497,7 @@
     ],
     "routine_signs": [],
     "source": "https://www.nhs.uk/conditions/urinary-tract-infections-utis/",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "label": "varicose veins",
@@ -521,6 +521,6 @@
       "Veins that are getting worse, or painful, itchy or swollen legs"
     ],
     "source": "https://www.nhs.uk/conditions/varicose-veins/",
-    "reviewed": false
+    "reviewed": true
   }
 ]
